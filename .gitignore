@@ -1,0 +1,13 @@
+# Project exclude paths
+/.gradle/
+/api/build/
+/entity/build/
+/entity/build/classes/java/main/
+/manager/build/
+/manager/build/classes/java/main/
+/manager/build/classes/java/test/
+/quartz/build/
+/saller/build/
+/swagger/build/
+/util/build/
+/util/build/classes/java/main/

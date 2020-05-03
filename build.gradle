@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group 'cn.ournh'
+version '1.0-SNAPSHOT'
+apply from: "$rootDir/dependencies.gradle"
+sourceCompatibility = 1.8
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'war'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenLocal()
+        maven { url "http://maven.aliyun.com/nexus/content/groups/public/"}
+        mavenCentral()
+        jcenter()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+        maven { url 'http://oss.jfrog.org/artifactory/oss-snapshot-local/' }  //转换pdf使用
+    }
+
+    dependencies {
+        compile libs.common
+        testCompile libs.test
+    }
+    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+}
+
